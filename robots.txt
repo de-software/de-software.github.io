@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: http://de-software.tk/sitemap.xml
