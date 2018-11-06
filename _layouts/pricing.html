@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{{ page.description }}">
+    <meta name="author" content="DE Software">
+    <meta name="theme-color" content="#D41818">
+
+    <title>{{ site.title }} - {{ page.title }} Prices</title>
+
+    <!-- OpenGraph Tags -->
+    <meta property="og:title" content="{{ site.title }} - {{ page.title }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:image" content="{{ site.url }}/{{ page.image }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}">
+
+    <!-- Twitter Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ site.url }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ site.url }}/css/modern-business.css" rel="stylesheet">
+</head>
+
+<body id="page-top" class="bg-dark text-white">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="{{ site.url }}">{{ site.title }}</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ site.url }}/about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                            <a class="dropdown-item" href="{{ site.url }}/blog.html">All Blogs</a>
+                            {% for post in site.posts limit:10 %}
+                                <a class="dropdown-item" href="{{ post.url }}">{{ post.title }} ({{ post.date | date_to_string }})</a>
+                            {% endfor %}
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                            <a class="dropdown-item" href="{{ site.url }}/bot-pricing.html">Discord Bots</a>
+                            <a class="dropdown-item" href="{{ site.url }}/web-pricing.html">Websites</a>
+                            <a class="dropdown-item" href="{{ site.url }}/app-pricing.html">Software</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="mt-4 mb-3">{{ page.title }} Prices</h1>
+        <div class="row">
+
+            <div class="col-lg-4 mb-4">
+                <div class="card card-outline-primary h-100 bg-dark">
+                    <h3 class="card-header bg-primary text-white">{{ page.t1_type }}</h3>
+                    <div class="card-body">
+                        <div class="display-4">{{ page.t1_price }}</div>
+                        <div class="font-italic">{{ page.t1_permonth }}</div>
+                    </div>
+                    <ul class="list-group list-group-flush bg-dark">
+                        <li class="list-group-item bg-dark">{{ page.t1_perk1 }}</li>
+                        <li class="list-group-item bg-dark">{{ page.t1_perk2 }}</li>
+                        <li class="list-group-item bg-dark">{{ page.t1_perk3 }}</li>
+                        <li class="list-group-item bg-darker">
+                            <a href="{{ site.discord }}" class="btn btn-primary">Contact on Discord!</a>
+                            <a href="mailto:{{ site.email }}?subject={{ page.title }} {{ page.t1_type }} Information!" class="btn btn-primary">Email Us!</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card card-outline-primary h-100 bg-dark">
+                    <h3 class="card-header bg-primary text-white">{{ page.t2_type }}</h3>
+                    <div class="card-body">
+                        <div class="display-4">{{ page.t2_price }}</div>
+                        <div class="font-italic">{{ page.t2_permonth }}</div>
+                    </div>
+                    <ul class="list-group list-group-flush bg-dark">
+                        <li class="list-group-item bg-dark">{{ page.t2_perk1 }}</li>
+                        <li class="list-group-item bg-dark">{{ page.t2_perk2 }}</li>
+                        <li class="list-group-item bg-dark">{{ page.t2_perk3 }}</li>
+                        <li class="list-group-item bg-darker">
+                            <a href="{{ site.discord }}" class="btn btn-primary">Contact on Discord!</a>
+                            <a href="mailto:{{ site.email }}?subject={{ page.title }} {{ page.t2_type }} Information!" class="btn btn-primary">Email Us!</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card card-outline-primary h-100 bg-dark">
+                    <h3 class="card-header bg-primary text-white">{{ page.t3_type }}</h3>
+                    <div class="card-body">
+                        <div class="display-4">{{ page.t3_price }}</div>
+                        <div class="font-italic">{{ page.t3_permonth }}</div>
+                    </div>
+                    <ul class="list-group list-group-flush bg-dark">
+                        <li class="list-group-item bg-dark">{{ page.t3_perk1 }}</li>
+                        <li class="list-group-item bg-dark">{{ page.t3_perk2 }}</li>
+                        <li class="list-group-item bg-dark">{{ page.t3_perk3 }}</li>
+                        <li class="list-group-item bg-darker">
+                            <a href="{{ site.discord }}" class="btn btn-primary">Contact on Discord!</a>
+                            <a href="mailto:{{ site.email }}?subject={{ page.title }} {{ page.t3_type }} Information!" class="btn btn-primary">Email Us!</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer and Copyright -->
+    <footer class="py-5 bg-darker">
+        <div class="container" style="text-align: center;">
+            <p class="m-0 text-center text-white">All properties not owned by {{ site.title }} belong to their respective owners unless otherwise specified.</p>
+            <p class="m-0 text-center text-white">Copyright &copy; {{ site.title }} <span id="copyright"></span></p>
+            <a href="{{ site.url }}/privacy">Privacy Policy</a>
+            -
+            <a href="{{ site.url }}/refunds">Refund Policy</a>
+            -
+            <a href="{{ site.url }}/terms">Terms of Service</a>
+            <script>document.getElementById('copyright').innerHTML = new Date().getFullYear();</script>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ site.url }}/vendor/jquery/jquery.min.js"></script>
+    <script src="{{ site.url }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>

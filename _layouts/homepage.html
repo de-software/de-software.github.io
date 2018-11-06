@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="author" content="DE Software">
+    <meta name="theme-color" content="#D41818">
+
+    <title>{{ site.title }}</title>
+
+    <!-- OpenGraph Tags -->
+    <meta property="og:title" content="{{ site.title }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:image" content="{{ site.url }}/{{ site.logo }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}">
+
+    <!-- Twitter Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ site.url }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ site.url }}/css/modern-business.css" rel="stylesheet">
+</head>
+
+<body id="page-top" class="bg-dark text-white">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="{{ site.url }}">{{ site.title }}</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ site.url }}/about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                            <a class="dropdown-item" href="{{ site.url }}/blog.html">All Blogs</a>
+                            <div style="border-top: 1px solid rgba(0,0,0,0.1)"></div>
+                            {% for post in site.posts limit:10 %}
+                                <a class="dropdown-item" href="{{ post.url }}">{{ post.title }} ({{ post.date | date_to_string }})</a>
+                            {% endfor %}
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                            <a class="dropdown-item" href="{{ site.url }}/bot-pricing.html">Discord Bots</a>
+                            <a class="dropdown-item" href="{{ site.url }}/web-pricing.html">Websites</a>
+                            <a class="dropdown-item" href="{{ site.url }}/app-pricing.html">Software</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Carousel -->
+    <header>
+        <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <!-- Slide One -->
+                <div class="carousel-item active" style="background-image: url({{ site.url }}/img/carousel-1.jpg)">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Built for you!</h3>
+                        <p>All of our software is handmade for users of all kinds!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1 class="my-4">Welcome to {{ site.title }}</h1>
+        <hr>
+
+        <!-- Who We Are Section -->
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>What is {{ site.title }}?</h2>
+                <p>{{ site.description }}</p>
+                <p>What we can provide you:</p>
+                <ul>
+                    <li>Custom Designs & Functions</li>
+                    <li>A focus for Quality of Life</li>
+                    <li>Complete involvement in our process</li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <img class="img-fluid rounded" src="{{ site.url }}/img/webapplications.jpg" alt="">
+            </div>
+        </div>
+        <hr>
+
+        <!-- Latest Blogs -->
+        <h2>Our Latest Blogs!</h2>
+        <div class="row">
+            {% if site.posts == null %}
+            <div class="col-lg-4 col-sm-6 portfolio-item">
+                <p>There are no blog posts here yet!</p>
+            </div>
+            {% else %}
+                {% for post in site.posts limit:3 %}
+                <div class="col-lg-4 col-sm-6 portfolio-item">
+                    <div class="card h-100" style="border: 1px solid rgba(255,255,255,0.1) !important">
+                        <a href="{{ post.url }}"><img class="card-img-top" src="{{ site.url }}/{{ post.image }}" alt=""></a>
+                        <div class="card-body bg-dark">
+                            <h4 class="card-title">
+                                <a href="{{ post.url }}">{{ post.title }}</a>
+                            </h4>
+                            <p class="card-text">{{ post.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <hr>
+
+        <!-- Discord Advertisement -->
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <p>We recently opened up a public server on Discord! Come join us and keep updated on upcoming projects!</p>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-lg btn-secondary btn-block" href="{{ site.discord }}">Join Now!</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer and Copyright -->
+    <footer class="py-5 bg-darker">
+        <div class="container" style="text-align: center;">
+            <p class="m-0 text-center text-white">All properties not owned by {{ site.title }} belong to their respective owners unless otherwise specified.</p>
+            <p class="m-0 text-center text-white">Copyright &copy; {{ site.title }} <span id="copyright"></span></p>
+            <a href="{{ site.url }}/privacy">Privacy Policy</a>
+            -
+            <a href="{{ site.url }}/refunds">Refund Policy</a>
+            -
+            <a href="{{ site.url }}/terms">Terms of Service</a>
+            <script>document.getElementById('copyright').innerHTML = new Date().getFullYear();</script>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ site.url }}/vendor/jquery/jquery.min.js"></script>
+    <script src="{{ site.url }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
