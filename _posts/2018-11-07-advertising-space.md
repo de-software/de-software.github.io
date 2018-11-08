@@ -1,4 +1,5 @@
 ---
+layout: blogpost
 title: Advertising Space!
 description: We are now selling footer room on our website to advertisers!
 image: img/webapplications.jpg
