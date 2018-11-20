@@ -18,8 +18,8 @@ body {
   padding-top: 54px;
 }
 
-a { color: #D41818; }
-a:hover, a:focus { color: #D41818 !important; }
+a { color: #CC9C00; }
+a:hover, a:focus { color: #CC9C00 !important; }
 
 hr { border-top: 1px solid rgba(255,255,255,0.1) !important; }
 
@@ -31,13 +31,13 @@ hr { border-top: 1px solid rgba(255,255,255,0.1) !important; }
 
 .card { background-color: #2C2C2C !important; }
 
-.red-link { color: #D41818 !important; }
+.red-link { color: #CC9C00 !important; }
 
 .bg-dark { background-color: #2C2C2C !important; }
 
 .bg-darker { background-color: #232323 !important; }
 
-.bg-primary { background-color: #D41818 !important; }
+.bg-primary { background-color: #CC9C00 !important; }
 
 .navbar { 
   background-color: #FFFFFF;
@@ -45,19 +45,19 @@ hr { border-top: 1px solid rgba(255,255,255,0.1) !important; }
 }
 
 .nav-link:hover {
-  color: #D41818 !important;
+  color: #CC9C00 !important;
 }
 .dropdown-item:hover, .dropdown-item:focus {
-  background-color: #D41818 !important;
+  background-color: #CC9C00 !important;
   color: #FFFFFF !important;
 }
 
 .btn {
-  background-color: #D41818;
+  background-color: #CC9C00;
   border: 0;
 }
 .btn:hover, .btn:active {
-  background-color: #A01111;
+  background-color: #AA7A00;
 }
 
 .carousel-item {
